@@ -16,18 +16,19 @@ function About() {
           <h2 className="about-title">About Me</h2>
           <div className="about-text">
             <p>
-              I'm a software engineer working at a financial planning SaaS company in Beijing, China.
-              I'm passionate about creating robust, scalable solutions that help people manage their
-              financial futures.
+              I'm the R&amp;D Director at Huamei Haolian (华美浩联), where I lead the
+              smart-health-terminal product line — building the hardware + software stack that brings
+              connected-health devices to people's homes.
             </p>
             <p>
-              My work combines technical expertise with a deep understanding of the financial services
-              industry, allowing me to bridge the gap between complex financial concepts and user-friendly
-              software solutions.
+              My work spans embedded firmware, mobile apps, and cloud services, with a focus on turning
+              medical-grade measurement into something anyone can actually use at home. Before this, I
+              spent years in fintech engineering at RightCapital, which is where I fell in love with
+              shipping reliable, regulation-aware products at scale.
             </p>
             <p>
               When I'm not coding, you'll find me exploring the world of coffee and traditional Chinese
-              tea, or connecting with fellow amateur radio operators around the globe.
+              tea, tinkering with antennas, or chasing my two daughters around the apartment.
             </p>
           </div>
         </div>

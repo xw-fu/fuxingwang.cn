@@ -1,0 +1,12 @@
+services:
+  - type: static_site
+    name: fuxingwang-cn
+    runtime: static
+    buildCommand: npm install && npm run build
+    staticPublishPath: dist
+    routes:
+      # SPA fallback — BrowserRouter uses real URLs, so any path
+      # that doesn't match a static asset must resolve to index.html.
+      - type: rewrite
+        source: /*
+        destination: /index.html

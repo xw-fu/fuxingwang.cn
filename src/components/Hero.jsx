@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import './Hero.css'
 
 function Hero() {
-  const words = ['creating', 'lifting', 'having fun', 'family bonding']
+  const words = ['building', 'shipping', 'tinkering', 'family bonding']
   const [currentWord, setCurrentWord] = useState(0)
 
   useEffect(() => {

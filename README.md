@@ -8,6 +8,7 @@ A minimalist personal website built with React and Vite.
 - Fully responsive layout
 - Accessibility-focused (skip links, semantic HTML)
 - Fast performance with Vite
+- SPA routing via React Router (`/`, `/about`)
 
 ## Getting Started
 
@@ -18,60 +19,67 @@ A minimalist personal website built with React and Vite.
 
 ### Installation
 
-Dependencies are already installed. If you need to reinstall:
-
 ```bash
 npm install
 ```
 
 ### Development
 
-Start the development server:
-
 ```bash
 npm run dev
 ```
 
-The site will be available at `http://localhost:5173`
+The site will be available at `http://localhost:5173`.
 
 ### Build
-
-Create a production build:
 
 ```bash
 npm run build
 ```
 
-### Preview Production Build
+The production bundle is written to `dist/`.
 
-Preview the production build locally:
+### Preview Production Build
 
 ```bash
 npm run preview
 ```
 
+## Deployment
+
+Deployed on **Render.com** as a Static Site. The `render.yaml` in this repo is the
+source of truth for the deployment config.
+
+The critical setting is the SPA rewrite:
+
+```yaml
+routes:
+  - type: rewrite
+    source: /*
+    destination: /index.html
+```
+
+Without it, refreshing or directly visiting any non-root path (e.g. `/about`)
+returns a 404 because Render serves static files literally, while React Router
+expects every URL to be served as `index.html` and resolved client-side.
+
 ## Customization
 
 ### Profile Photo
 
-Replace the placeholder image in `src/components/Hero.jsx` with your actual photo.
-
-### Social Links
-
-Update the social media links in `src/components/Footer.jsx` with your actual profiles.
+Replace `public/avatar.jpg` to update the avatar.
 
 ### Content
 
-Edit the content in the component files:
-- `src/components/Hero.jsx` - Hero section with profile photo
-- `src/components/About.jsx` - About me section
-- `src/components/Footer.jsx` - Social links and copyright
+- `src/components/Hero.jsx` — Hero section + rotating-words list
+- `src/components/About.jsx` — About me copy
+- `src/components/Footer.jsx` — Social links and copyright
+- `index.html` — `<title>` and meta
 
 ### Styling
 
-Each component has its own CSS file for easy customization:
-- Modify colors, fonts, and spacing in the individual CSS files
-- Global styles are in `src/index.css`
+- Each component has its own CSS file for easy customization
+- Global styles live in `src/index.css`
 
 ## Project Structure
 
@@ -84,13 +92,17 @@ fuxingwang.cn/
 │   │   ├── Hero.jsx
 │   │   ├── About.jsx
 │   │   └── Footer.jsx
-│   ├── App.jsx         # Main app component
-│   ├── App.css         # App styles
-│   ├── main.jsx        # Entry point
-│   └── index.css       # Global styles
-├── index.html          # HTML template
-├── package.json        # Dependencies
-└── vite.config.js      # Vite configuration
+│   ├── pages/           # Route-level components
+│   │   ├── Home.jsx
+│   │   └── AboutPage.jsx
+│   ├── App.jsx          # Router + layout shell
+│   ├── App.css
+│   ├── main.jsx
+│   └── index.css
+├── index.html
+├── package.json
+├── render.yaml          # Render.com Static Site config
+└── vite.config.js
 ```
 
 ## License
