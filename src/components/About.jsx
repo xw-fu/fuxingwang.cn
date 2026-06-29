@@ -17,8 +17,8 @@ function About() {
           <div className="about-text">
             <p>
               I'm the R&amp;D Director at E-Health Now, where I lead the
-              smart-health-terminal product line — building the hardware + software stack that brings
-              connected-health devices to people's homes.
+              connected-health-hardware line — shipping integrated devices and companion software to our
+              B2B partners, who deliver them to the people they serve.
             </p>
             <p>
               My work spans embedded firmware, mobile apps, and cloud services, with a focus on turning
