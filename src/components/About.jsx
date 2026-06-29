@@ -16,7 +16,7 @@ function About() {
           <h2 className="about-title">About Me</h2>
           <div className="about-text">
             <p>
-              I'm the R&amp;D Director at Huamei Haolian (华美浩联), where I lead the
+              I'm the R&amp;D Director at E-Health Now, where I lead the
               smart-health-terminal product line — building the hardware + software stack that brings
               connected-health devices to people's homes.
             </p>
